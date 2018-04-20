@@ -8,6 +8,13 @@ describe("Replace", () => {
         expect(replace(old).with(updated).in(old)).toBe(updated);
     });
 
+    it("should return the new date when the haystack is the old date", () => {
+        const old = new Date("01/01/2000");
+        const updated = new Date("04/20/2018");
+
+        expect(replace(old).with(updated).in(old)).toBe(updated);
+    });
+
     it("should find and replace the object in a complex object", () => {
         //Arrange
         const old = { value: "old" };
