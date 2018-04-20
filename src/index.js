@@ -7,13 +7,37 @@ function mapObject(obj, propMap) {
     return ret;
 }
 
+function some(obj, isMatch) {
+    for (var name in obj) {
+        if (isMatch(obj[name], name)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function processReplacement({ target, updated, haystack }) {
     return haystack === target ? updated
-        : Array.isArray(haystack)
-            ? haystack.map(item => item === target ? updated : processReplacement({ target, updated, haystack: item }))
-            : typeof haystack === "object"
-                ? mapObject(haystack, obj => processReplacement({ target, updated, haystack: obj }))
+        : Array.isArray(haystack) ? processArray()
+            : typeof haystack === "object" ? processObject()
                 : haystack
+
+    function processObject() {
+        var updatedHaystack = mapObject(haystack, obj => processReplacement({ target, updated, haystack: obj }));
+
+        return some(updatedHaystack, (prop, name) => prop !== haystack[name])
+            ? updatedHaystack
+            : haystack;
+    }
+
+    function processArray() {
+        var updatedHaystack = haystack.map(item => item === target ? updated : processReplacement({ target, updated, haystack: item }));
+
+        return updatedHaystack.some((item, index) => item !== haystack[index])
+            ? updatedHaystack
+            : haystack;
+    }
 }
 
 export function replace(old) {
