@@ -2,22 +2,22 @@ import { replace } from '../src'
 
 describe("Replace", () => {
     it("should return the new object when the haystack is the old object", () => {
-        var old = { value: "old" };
-        var updated = { value: "updated" };
+        const old = { value: "old" };
+        const updated = { value: "updated" };
 
         expect(replace(old).with(updated).in(old)).toBe(updated);
     });
 
     it("should find and replace the object in a complex object", () => {
         //Arrange
-        var old = { value: "old" };
-        var haystack = {
+        const old = { value: "old" };
+        const updated = { value: "updated" };
+        const haystack = {
             untouched: { wrapper: "something" },
             targetWrapper: {
                 target: old
             }
         };
-        var updated = { value: "updated" };
 
         //Act
         const result = replace(old).with(updated).in(haystack);
@@ -35,12 +35,12 @@ describe("Replace", () => {
 
     it("should find and replace the object in an array in a complex object", () => {
         //Arrange
-        var old = { value: "old" };
-        var haystack = {
+        const old = { value: "old" };
+        const updated = { value: "updated" };
+        const haystack = {
             untouched: [{ untouched: "something" }],
             target: [old]
         };
-        var updated = { value: "updated" };
 
         //Act
         const result = replace(old).with(updated).in(haystack);
@@ -56,12 +56,12 @@ describe("Replace", () => {
 
     it("should find and replace the object in a complex object in an array in another complex object", () => {
         //Arrange
-        var old = { value: "old" };
-        var haystack = {
+        const old = { value: "old" };
+        const updated = { value: "updated" };
+        const haystack = {
             untouched: [{ untouched: "something" }],
             target: [{ targetWrapper: old }]
         };
-        var updated = { value: "updated" };
 
         //Act
         const result = replace(old).with(updated).in(haystack);
@@ -77,13 +77,13 @@ describe("Replace", () => {
 
     it("should find and replace multiple targets in a complex structure", () => {
         //Arrange
-        var old = { value: "old" };
-        var haystack = {
+        const old = { value: "old" };
+        const updated = { value: "updated" };
+        const haystack = {
             untouched: [{ untouched: "something" }],
             target: [{ targetWrapper: old }],
             secondTarget: old
         };
-        var updated = { value: "updated" };
 
         //Act
         const result = replace(old).with(updated).in(haystack);
