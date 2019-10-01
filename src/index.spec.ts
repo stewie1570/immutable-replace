@@ -1,4 +1,4 @@
-import { replace } from '../src'
+import { replace } from './'
 
 describe("Replace", () => {
     it("should return the new object when the haystack is the old object", () => {
