@@ -1,6 +1,6 @@
 {
   "name": "immutable-replace",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Returns a result with the matching objects replaced recursively",
   "repository": {
     "type": "git",
