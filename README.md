@@ -1,8 +1,9 @@
 # immutable-replace
 
 [![Build](https://travis-ci.org/stewie1570/immutable-replace.svg)](https://travis-ci.org/stewie1570/immutable-replace)
-[![Codecov](https://img.shields.io/codecov/c/github/stewie1570/immutable-replace)](https://codecov.io/gh/stewie1570/immutable-replace)
+[![Coverage Status](https://coveralls.io/repos/github/stewie1570/immutable-replace/badge.svg?branch=master)](https://coveralls.io/github/stewie1570/immutable-replace?branch=master)
 [![npm version](https://badge.fury.io/js/immutable-replace.svg)](https://badge.fury.io/js/immutable-replace)
+[![Package Size](https://badgen.net/bundlephobia/minzip/immutable-replace)](https://bundlephobia.com/result?p=immutable-replace)
 
 If you don't want to nest or recurse usage of the spread operator to get an updated object then you may like this package.
 
