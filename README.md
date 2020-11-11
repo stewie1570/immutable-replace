@@ -1,6 +1,6 @@
 # immutable-replace
 
-[![Build](https://travis-ci.org/stewie1570/immutable-replace.svg)](https://travis-ci.org/stewie1570/immutable-replace)
+[![Build](https://github.com/stewie1570/immutable-replace/workflows/Build/badge.svg)](https://github.com/stewie1570/immutable-replace/actions)
 [![Coverage Status](https://coveralls.io/repos/github/stewie1570/immutable-replace/badge.svg?branch=master)](https://coveralls.io/github/stewie1570/immutable-replace?branch=master)
 [![npm version](https://badge.fury.io/js/immutable-replace.svg)](https://badge.fury.io/js/immutable-replace)
 [![Package Size](https://badgen.net/bundlephobia/minzip/immutable-replace)](https://bundlephobia.com/result?p=immutable-replace)
