@@ -32,16 +32,6 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-  publish:
-    needs: [build]
-    if: contains(github.ref, 'release')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+    - name: Publish
+      if: contains(github.ref, 'release')
+      run: npm publish
